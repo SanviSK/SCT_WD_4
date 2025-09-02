@@ -42,8 +42,8 @@ SCT_WD_4/
 
 1. Clone the repository  
    ```bash
-   git clone https://github.com/SanviSK/SCT_WD_4.git
-   👉 Click here to open the repo
+[git clone https://github.com/SanviSK/SCT_WD_4.git](https://github.com/SanviSK/SCT_WD_4.git)
+
 2. Navigate into the project folder
 
 cd SCT_WD_4
@@ -64,8 +64,16 @@ Categorization or tags for better task organization.
 
 👩‍💻 Author
 
-Sanvi SK
-Task 4 Submission for SkillCraft Technology Web Development Internship
+---
+
+## 👩‍💻 Author
+
+**Sanvi S K**
+
+- 🌐 [GitHub Profile](https://github.com/SanviSK)  
+- 💼 [LinkedIn Profile](https://www.linkedin.com/in/sanvi-sk/)  
+
+If you like this project, don’t forget to ⭐ the repo to show support!
 
 
 ---
