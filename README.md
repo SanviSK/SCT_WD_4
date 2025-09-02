@@ -22,10 +22,10 @@ It allows users to manage their daily tasks effectively with features like addin
 ## 📂 Project Structure  
 
 SCT_WD_4/
-│── index.html # Main HTML structure
-│── style.css # Styling (Light/Dark Mode + Layout)
-│── script.js # App logic (Add/Edit/Delete/Complete tasks)
-│── README.md # Documentation
+-->index.html # Main HTML structure
+--> style.css # Styling (Light/Dark Mode + Layout)
+--> script.js # App logic (Add/Edit/Delete/Complete tasks)
+-->README.md # Documentation
 
 
 ---
@@ -43,7 +43,7 @@ SCT_WD_4/
 1. Clone the repository  
    ```bash
    git clone https://github.com/SanviSK/SCT_WD_4.git
-   
+   👉 Click here to open the repo
 2. Navigate into the project folder
 
 cd SCT_WD_4
