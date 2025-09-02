@@ -1,105 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>PlanIt - Task Manager</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #6f9ff0; /* darker blue */
-      margin: 0; padding: 0;
-      transition: background 0.4s;
-    }
-    .container {
-      max-width: 700px; margin: 40px auto;
-      background: #fff; border-radius: 20px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-      padding: 30px;
-    }
-    h1 { text-align: center; font-size: 2rem; color: #222; }
-    h1 span { font-size: 2.2rem; }
-    .input-row {
-      display: flex; gap: 10px; margin-top: 20px;
-      justify-content: center; flex-wrap: wrap;
-    }
-    input, button {
-      padding: 12px; border: none; border-radius: 10px;
-      font-size: 1rem;
-    }
-    input { background: #f7f7f7; outline: none; }
-    button {
-      background: #0066ff; color: white; font-weight: bold;
-      cursor: pointer; transition: 0.2s;
-    }
-    button:hover { transform: scale(1.05); }
-
-    /* Fix ADD overlap with AM/PM */
-    input[type="time"] {
-      min-width: 130px;
-    }
-
-    .task-list { margin-top: 30px; }
-    .task {
-      background: #fdfdfd; border-radius: 15px;
-      padding: 15px 20px; margin-bottom: 15px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-      display: flex; justify-content: space-between; align-items: center;
-      animation: fadeIn 0.4s;
-    }
-    .task-info { max-width: 70%; }
-    .task p { margin: 0; font-size: 1rem; }
-    .task small { display: block; font-size: 0.85rem; color: #444; margin-top: 4px; }
-    .badge {
-      display: inline-block; background: #e8f0fe;
-      padding: 3px 10px; border-radius: 15px;
-      margin-right: 6px; font-size: 0.8rem;
-    }
-    .status { margin-top: 8px; font-weight: bold; }
-    .status.pending { color: #e67e22; }
-    .status.done { color: #2ecc71; }
-    .task-actions button {
-      border: none; padding: 8px 12px; margin-left: 5px;
-      border-radius: 8px; cursor: pointer; transition: 0.2s; font-size: 1.1rem;
-    }
-    .task-actions button:hover { transform: scale(1.1); }
-    .done-btn { background: #2ecc71; color: white; }
-    .edit-btn { background: #f39c12; color: white; }
-    .delete-btn { background: #e74c3c; color: white; }
-
-    /* Dark mode */
-    body.dark { background: #1e293b; }
-    body.dark .container { background: #2d3e50; color: #fff; }
-    body.dark h1 { color: #fff; }
-    body.dark input { background: #3a4a63; color: #fff; }
-    body.dark .task { background: #44566c; color: #fff; }
-    body.dark .badge { background: #334155; color: #fff; }
-
-    .dark-toggle { display: flex; justify-content: center; margin-top: 20px; }
-
-    @keyframes fadeIn {
-      from {opacity:0; transform: translateY(10px);}
-      to {opacity:1; transform: translateY(0);}
-    }
-  </style>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-  <div class="container">
-    <h1>🚀 PlanIt</h1>
-    <div class="input-row">
-      <input type="text" id="taskInput" placeholder="Enter task...">
-      <input type="date" id="taskDate">
-      <input type="time" id="taskTime">
-      <button id="addBtn">+ Add</button>
+  <main class="card">
+    <h1 class="title">🚀 <span>PlanIt</span></h1>
+
+    <!-- Input Row -->
+    <div class="inputs">
+      <input id="taskTitle" type="text" placeholder="Enter task…" />
+      <input id="taskDate" type="date" />
+      <input id="taskTime" type="time" />
+      <button id="addBtn" class="btn btn-primary">+ Add</button>
     </div>
-    <div class="task-list" id="taskList">
-      <h3>My To-Do List</h3>
-    </div>
-    <div class="dark-toggle">
-      <button onclick="toggleDarkMode()">🌙 Toggle Dark Mode</button>
+
+    <h2 class="section">My To-Do List</h2>
+    <ul id="list" class="list"></ul>
+
+    <!-- Status / Output -->
+    <div id="output" class="output" aria-live="polite"></div>
+
+    <button id="darkToggle" class="btn btn-ghost">🌙 Toggle Dark Mode</button>
+  </main>
+
+  <!-- Edit Modal -->
+  <div id="editModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="editTitle">
+    <div class="modal-body">
+      <h3 id="editTitle">✏️ Edit Task</h3>
+      <input id="editTitleInput" type="text" placeholder="Task title"/>
+      <input id="editDateInput" type="date"/>
+      <input id="editTimeInput" type="time"/>
+      <div class="modal-actions">
+        <button id="saveEditBtn" class="btn btn-primary">💾 Save</button>
+        <button id="cancelEditBtn" class="btn btn-ghost">❌ Cancel</button>
+      </div>
     </div>
   </div>
 
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>
+
