@@ -71,7 +71,7 @@ Categorization or tags for better task organization.
 **Sanvi S K**
 
 - 🌐 [GitHub Profile](https://github.com/SanviSK)  
-- 💼 [LinkedIn Profile](https://www.linkedin.com/in/sanvi-sk/)  
+- 💼 [LinkedIn Profile][https://www.linkedin.com/in/sanvi-sk/](https://www.linkedin.com/in/sanvi-s-k-5305b9317]  
 
 If you like this project, don’t forget to ⭐ the repo to show support!
 
