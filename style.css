@@ -124,14 +124,13 @@ body{
 .output.warn{ color:var(--warn); }
 .output.danger{ color:var(--danger); }
 
-/* Dark Mode */
 .dark body{ background:#0f172a; }
 .dark .card{ background:#0b1220; color:#e5e7eb; }
 .dark .inputs input, .dark .inputs select{ background:#0f172a; border-color:#1f2937; color:#e5e7eb; }
 .dark .item{ background: linear-gradient(180deg, #0f172a, #0b1220); border-color:#11203d; }
 .dark .btn-ghost{ background:#111827; color:#e5e7eb; }
 
-/* Modal */
+
 .modal{
   position:fixed; inset:0; display:none;
   background:rgba(0,0,0,.55);
